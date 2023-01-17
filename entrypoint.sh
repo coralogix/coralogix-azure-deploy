@@ -24,7 +24,7 @@ check_vars()
 }
 
 check_vars $required_base_env_vars
-git clone https://github.com/MichaelBriggs-Coralogix/coralogix-azure-serverless.git
+git clone https://github.com/coralogix/coralogix-azure-serverless.git
 cd coralogix-azure-serverless/$AZURE_INTEGRATION/
 if [ -f docker_deploy.sh ]; then
 	bash docker_deploy.sh
