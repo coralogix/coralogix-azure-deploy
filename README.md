@@ -14,7 +14,7 @@ Coralogix provides a seamless integration with ``Azure`` cloud so you can send y
 Clone this repo:
 
 ```bash
-$ git clone https://github.com/MichaelBriggs-Coralogix/coralogix-azure-deploy.git
+$ git clone https://github.com/coralogix/coralogix-azure-deploy.git
 $ cd coralogix-azure-deploy
 ```
 

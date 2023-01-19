@@ -23,8 +23,20 @@ check_vars()
     return 0
 }
 
+check_fault () {
+    if ! [ $? -eq 0 ]
+    then
+        exit 1
+    fi
+}
+
 check_vars $required_base_env_vars
-git clone https://github.com/MichaelBriggs-Coralogix/coralogix-azure-serverless.git
+git clone https://github.com/coralogix/coralogix-azure-serverless.git
+if [[ -v GIT_BRANCH ]]; then
+  echo "Checking out git branch: $GIT_BRANCH"
+  git checkout $GIT_BRANCH
+  check_fault
+fi
 cd coralogix-azure-serverless/$AZURE_INTEGRATION/
 if [ -f docker_deploy.sh ]; then
 	bash docker_deploy.sh
