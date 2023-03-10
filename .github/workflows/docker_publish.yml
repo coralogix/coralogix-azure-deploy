@@ -27,4 +27,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: coralogixrepo/azure-functions-deploy:${{ steps.set-image-version.outputs.version }}
+          tags: |
+          coralogixrepo/azure-functions-deploy:${{ steps.set-image-version.outputs.version }}
+          coralogixrepo/azure-functions-deploy:latest
