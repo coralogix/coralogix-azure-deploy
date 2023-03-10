@@ -10,15 +10,21 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Login to Docker Hub
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+
+      - name: Set version number
+        id: set-image-version
+        run: echo "version=$(cat VERSION)" >> $GITHUB_OUTPUT
+
+      - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Build and push
+
+      - name: Build and push
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: coralogixrepo/azure-functions-deploy:latest
+          tags: coralogixrepo/azure-functions-deploy:${{ steps.set-image-version.outputs.version }}
