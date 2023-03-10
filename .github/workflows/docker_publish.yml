@@ -28,5 +28,5 @@ jobs:
         with:
           push: true
           tags: |
-          coralogixrepo/azure-functions-deploy:${{ steps.set-image-version.outputs.version }}
-          coralogixrepo/azure-functions-deploy:latest
+            coralogixrepo/azure-functions-deploy:${{ steps.set-image-version.outputs.version }}
+            coralogixrepo/azure-functions-deploy:latest
