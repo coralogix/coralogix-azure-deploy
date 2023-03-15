@@ -22,6 +22,7 @@ Modify the requisite .vars file for your intended integration deployment:
 
 ```bash
 BlobStorage.vars
+BlobViaEventGrid.vars
 StorageQueue.vars
 EventHub.vars
 ```
