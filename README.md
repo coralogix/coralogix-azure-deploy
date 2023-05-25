@@ -1,3 +1,11 @@
+
+
++++++++++++++++++++++++++++++++++
+
+# Deprecated - Please do not use
+
++++++++++++++++++++++++++++++++++
+
 # Coralogix Azure serverless integration deployment container
 Deployment framework for Azure Integrations for the Coralogix platform
 
